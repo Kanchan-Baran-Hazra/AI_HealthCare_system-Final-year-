@@ -21,7 +21,7 @@ version = "v1"
 app = FastAPI(
     version=version,
     title="AI HealthCare App",
-    summary="api for ai healthcare platform develop by K.B Hazra for final-year project",
+    summary="api for ai healthcare platform developed by K.B Hazra for final-year project",
     lifespan=life_span,
     license_info={
         "name": "XXX",
