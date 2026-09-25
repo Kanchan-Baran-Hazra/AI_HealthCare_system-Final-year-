@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HealthAI – Your Personal AI Health Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Instrument+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ LANDING ============ -->
+<section id="landing" class="screen active">
+  <header class="topbar">
+    <div class="logo"><span class="pulse-dot"></span>HealthAI</div>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#about">About</a>
+      <button class="btn ghost" data-go="login">Log in</button>
+      <button class="btn primary" data-go="signup">Sign up</button>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div class="hero-text">
+      <h1>Your personal<br>AI health assistant</h1>
+      <p>Understand your health. Organize your medical information. Make informed health decisions.</p>
+      <div class="hero-actions">
+        <button class="btn primary lg" data-go="signup">Get started</button>
+        <a class="btn ghost lg" href="#features">Learn more</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="report-head"><strong>Example: blood report analysis</strong><span>Sample data</span></div>
+      <div class="report-row flag"><span>Hemoglobin</span><span>10.2</span><span>12–16</span></div>
+      <div class="report-row"><span>WBC</span><span>7,500</span><span>4,000–11,000</span></div>
+      <div class="report-row"><span>Glucose</span><span>95</span><span>70–100</span></div>
+      <p class="ai-note">Your hemoglobin is below the reference range on this report. This alone does not establish a diagnosis — discuss it with your doctor.</p>
+    </div>
+  </div>
+
+  <section id="features" class="features">
+    <h2>What HealthAI does</h2>
+    <div class="feature-grid">
+      <div><h3>AI health assistant</h3><p>Ask questions about your health in plain language.</p></div>
+      <div><h3>Medical document analysis</h3><p>Upload a report and get each value explained.</p></div>
+      <div><h3>Symptom guidance</h3><p>General information and when to see a doctor.</p></div>
+      <div><h3>Medication management</h3><p>Doses, schedules and reminders in one place.</p></div>
+      <div><h3>Health monitoring</h3><p>Track weight, BP, sleep and activity over time.</p></div>
+      <div><h3>Secure and private</h3><p>You decide what the AI can read.</p></div>
+    </div>
+  </section>
+
+  <section id="how" class="how">
+    <h2>How it works</h2>
+    <ol>
+      <li><strong>Create your health profile</strong> — basic details, history, allergies.</li>
+      <li><strong>Upload reports</strong> — PDF, JPG or PNG.</li>
+      <li><strong>Get clear explanations</strong> — the AI reads values and flags what's outside range.</li>
+    </ol>
+  </section>
+</section>
+
+<!-- ============ LOGIN ============ -->
+<section id="login" class="screen auth">
+  <form class="auth-box" id="loginForm" novalidate>
+    <div class="logo center"><span class="pulse-dot"></span>HealthAI</div>
+    <h2>Welcome back</h2>
+    <div class="role-toggle">
+      <button type="button" class="role on" data-role="patient">Patient</button>
+      <button type="button" class="role" data-role="doctor">Doctor</button>
+    </div>
+    <label>Email<input type="email" id="loginEmail" placeholder="you@example.com"></label>
+    <label>Password<input type="password" id="loginPass" placeholder="••••••••"></label>
+    <p class="error" id="loginError"></p>
+    <button class="btn primary full" type="submit">Log in</button>
+    <a href="#" class="small">Forgot password?</a>
+    <p class="small">Don't have an account? <a href="#" data-go="signup">Sign up</a></p>
+  </form>
+</section>
+
+<!-- ============ SIGNUP ============ -->
+<section id="signup" class="screen auth">
+  <form class="auth-box" id="signupForm" novalidate>
+    <div class="logo center"><span class="pulse-dot"></span>HealthAI</div>
+    <h2>Create your account</h2>
+    <label>Full name<input id="suName" placeholder="Your name"></label>
+    <label>Email<input type="email" id="suEmail" placeholder="you@example.com"></label>
+    <label>Password<input type="password" id="suPass" placeholder="At least 6 characters"></label>
+    <div class="two">
+      <label>Date of birth<input type="date" id="suDob"></label>
+      <label>Gender (optional)
+        <select><option>Prefer not to say</option><option>Female</option><option>Male</option><option>Other</option></select>
+      </label>
+    </div>
+    <label>Emergency contact<input id="suEmg" placeholder="Phone number"></label>
+    <p class="error" id="signupError"></p>
+    <button class="btn primary full" type="submit">Create account</button>
+    <p class="small">Already have an account? <a href="#" data-go="login">Log in</a></p>
+  </form>
+</section>
+
+<!-- ============ APP ============ -->
+<section id="app" class="screen">
+  <aside class="sidebar">
+    <div class="logo"><span class="pulse-dot"></span>HealthAI</div>
+    <nav id="sideNav">
+      <a data-page="dashboard" class="active">Dashboard</a>
+      <a data-page="assistant">AI Assistant</a>
+      <a data-page="symptoms">Symptoms</a>
+      <a data-page="documents">Documents</a>
+      <a data-page="medicines">Medicines</a>
+      <a data-page="soon">Nutrition</a>
+      <a data-page="soon">Fitness</a>
+      <a data-page="soon">Sleep</a>
+      <a data-page="soon">Timeline</a>
+      <a data-page="soon">Emergency</a>
+      <a data-page="soon">Settings</a>
+    </nav>
+    <button class="btn ghost full" id="logoutBtn">Log out</button>
+  </aside>
+
+  <main class="main">
+    <!-- Dashboard -->
+    <div class="page active" id="page-dashboard">
+      <h1 class="greet" id="greeting">Good evening</h1>
+      <p class="muted">Here's your health overview</p>
+      <div class="stats">
+        <div class="stat"><span>Weight</span><strong>52 kg</strong></div>
+        <div class="stat"><span>Blood pressure</span><strong>120/80</strong></div>
+        <div class="stat"><span>Sleep</span><strong>7 hrs</strong></div>
+      </div>
+      <div class="panel">
+        <h3>Weight trend (last 30 days)</h3>
+        <svg viewBox="0 0 400 120" class="chart" id="weightChart"></svg>
+      </div>
+      <div class="split">
+        <div class="panel insight">
+          <h3>AI health insight</h3>
+          <p>Your activity level has increased over the last 4 weeks — average daily steps went from 5,200 to 7,100.</p>
+        </div>
+        <div class="panel">
+          <h3>Today's medication</h3>
+          <div class="doses" id="doses">
+            <button class="dose done">Morning</button>
+            <button class="dose">Afternoon</button>
+            <button class="dose">Evening</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI Assistant -->
+    <div class="page" id="page-assistant">
+      <h1>AI Health Assistant</h1>
+      <div class="chat" id="chat">
+        <div class="msg ai">Hello! How can I help you today?</div>
+      </div>
+      <form class="chat-input" id="chatForm">
+        <input id="chatText" placeholder="Ask something about your health…" autocomplete="off">
+        <button class="btn primary">Send</button>
+      </form>
+      <p class="disclaimer">HealthAI gives general information, not medical diagnosis.</p>
+    </div>
+
+    <!-- Symptom checker -->
+    <div class="page" id="page-symptoms">
+      <h1>Symptom checker</h1>
+      <div class="panel" id="symStep1">
+        <h3>What symptoms are you experiencing?</h3>
+        <div class="chips" id="symChips">
+          <button class="chip">Fever</button><button class="chip">Cough</button>
+          <button class="chip">Sore throat</button><button class="chip">Headache</button>
+        </div>
+        <div class="two">
+          <label>Duration
+            <select id="symDur"><option>1 day</option><option selected>2 days</option><option>3–7 days</option><option>More than a week</option></select>
+          </label>
+          <label>Severity
+            <select id="symSev"><option>Mild</option><option selected>Moderate</option><option>Severe</option></select>
+          </label>
+        </div>
+        <button class="btn primary" id="symNext">Continue</button>
+      </div>
+      <div class="panel hidden" id="symStep2">
+        <h3>Do you have any of the following?</h3>
+        <div class="checks">
+          <label><input type="checkbox" class="redflag"> Difficulty breathing</label>
+          <label><input type="checkbox" class="redflag"> Chest pain</label>
+          <label><input type="checkbox"> Vomiting</label>
+          <label><input type="checkbox"> Dizziness</label>
+        </div>
+        <button class="btn primary" id="symResult">See result</button>
+      </div>
+      <div class="panel hidden" id="symStep3"></div>
+    </div>
+
+    <!-- Documents -->
+    <div class="page" id="page-documents">
+      <h1>Medical documents</h1>
+      <label class="dropzone" id="dropzone">
+        <input type="file" id="fileInput" accept=".pdf,.jpg,.jpeg,.png" hidden>
+        <strong>Upload medical document</strong>
+        <span>PDF, JPG or PNG — drop here or click to browse</span>
+      </label>
+      <div class="panel">
+        <h3>Recent documents</h3>
+        <table class="doc-table" id="docTable">
+          <tr><td>Blood report</td><td>Aug 20</td><td><button class="btn small" data-analyze>Analyze</button></td></tr>
+          <tr><td>Prescription</td><td>Aug 18</td><td><button class="btn small" data-analyze>Analyze</button></td></tr>
+          <tr><td>Lab report</td><td>Aug 10</td><td><button class="btn small" data-analyze>Analyze</button></td></tr>
+        </table>
+      </div>
+      <div class="panel hidden" id="analysis"></div>
+    </div>
+
+    <!-- Medicines -->
+    <div class="page" id="page-medicines">
+      <h1>My medications</h1>
+      <div class="panel">
+        <table class="doc-table" id="medTable">
+          <tr><th>Medicine</th><th>Dose</th><th>Schedule</th></tr>
+          <tr><td>Medicine A</td><td>500 mg</td><td>Morning</td></tr>
+          <tr><td>Medicine B</td><td>10 mg</td><td>Evening</td></tr>
+        </table>
+        <form class="add-med" id="medForm">
+          <input id="medName" placeholder="Medicine name">
+          <input id="medDose" placeholder="Dose">
+          <select id="medTime"><option>Morning</option><option>Afternoon</option><option>Evening</option></select>
+          <button class="btn primary">Add</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Coming soon -->
+    <div class="page" id="page-soon">
+      <h1 id="soonTitle">Coming soon</h1>
+      <p class="muted">This module is planned for the next phase of development.</p>
+    </div>
+  </main>
+</section>
+
+<!-- ============ DOCTOR ============ -->
+<section id="doctor" class="screen">
+  <header class="topbar">
+    <div class="logo"><span class="pulse-dot"></span>HealthAI · Doctor</div>
+    <button class="btn ghost" data-go="landing">Log out</button>
+  </header>
+  <main class="main doctor-main">
+    <h1>Doctor dashboard</h1>
+    <p class="muted">Welcome, Dr. Sen</p>
+    <div class="stats">
+      <div class="stat"><span>Today's appointments</span><strong>3</strong></div>
+      <div class="stat"><span>Patients</span><strong>24</strong></div>
+      <div class="stat"><span>Reports to review</span><strong>5</strong></div>
+    </div>
+    <div class="panel">
+      <h3>Today's appointments</h3>
+      <table class="doc-table">
+        <tr><th>Time</th><th>Patient</th><th>Reason</th><th></th></tr>
+        <tr><td>09:00</td><td>Patient A</td><td>Follow-up</td><td><button class="btn small" data-view="Patient A">View reports</button></td></tr>
+        <tr><td>10:30</td><td>Patient B</td><td>Blood report review</td><td><button class="btn small" data-view="Patient B">View reports</button></td></tr>
+        <tr><td>12:00</td><td>Patient C</td><td>Consultation</td><td><button class="btn small" data-view="Patient C">View reports</button></td></tr>
+      </table>
+    </div>
+    <div class="panel hidden" id="patientView"></div>
+  </main>
+</section>
+
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>

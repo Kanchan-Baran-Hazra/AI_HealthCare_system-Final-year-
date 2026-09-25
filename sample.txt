@@ -1,0 +1,13 @@
+celery -A src.core.celery_config.celery_app worker --loglevel=info -P solo
+
+{
+  "name": "kanchan",
+  "email": "sdakumangal35@gmail.com",
+  "password": "123456",
+  "dob": "2026-09-25",
+  "gender": "MALE",
+  "phone_number": "1234567890"
+}
+
+
+register--->email_verify--->login--->home_page
