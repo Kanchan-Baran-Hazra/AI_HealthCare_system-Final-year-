@@ -4,4 +4,4 @@ AI HealthCare APP
 register--->email_verify--->login--->home_page
 
 
-![API-Sample](image/api_sample.png)
+![API-Sample](image/api_sample1.png)
