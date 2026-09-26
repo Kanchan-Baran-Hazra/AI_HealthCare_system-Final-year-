@@ -28,6 +28,14 @@ class Settings(BaseSettings):
     REACT_URI:str
     BACKEND_URI:str
 
+    GOOGLE_CLIENT_ID:str
+    GOOGLE_CLIENT_SECRET:str
+    GOOGLE_REDIRECT_URI:str
+
+    GITHUB_CLIENT_ID:str
+    GITHUB_CLIENT_SECRET:str
+    GITHUB_REDIRECT_URI:str
+
 
     model_config=SettingsConfigDict(
         env_file=".env",

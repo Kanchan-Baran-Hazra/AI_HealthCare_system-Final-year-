@@ -3,6 +3,7 @@ from contextlib import asynccontextmanager
 from src.middleware import register_middleware
 from src.db.main import init_db,engine
 from src.api.users.routers import user_router
+from src.api.users.oauth import oauth_route
 
 
 @asynccontextmanager
@@ -40,5 +41,6 @@ def health():
 
 
 app.include_router(user_router,prefix=f'/api/{version}/user',tags=['Users'])
+app.include_router(oauth_route,prefix=f'/api/{version}/oauth',tags=['Oauth'])
 
 

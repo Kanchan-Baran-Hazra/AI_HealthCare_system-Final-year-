@@ -11,3 +11,72 @@ celery -A src.core.celery_config.celery_app worker --loglevel=info -P solo
 
 
 register--->email_verify--->login--->home_page
+
+
+g-oauth response data
+{
+  "iss": "https://accounts.google.com",
+  "azp": "140908659508-e8rr35vbqhmbrnevfoc6kfd4vcqb9uat.apps.googleusercontent.com",
+  "aud": "140908659508-e8rr35vbqhmbrnevfoc6kfd4vcqb9uat.apps.googleusercontent.com",
+  "sub": "112259165874211957623",
+  "email": "khazra800@gmail.com",
+  "email_verified": true,
+  "at_hash": "iPXDa3PPB0E8zursb7otFw",
+  "nonce": "FGTzRrvM05HYoqUTd0ll",
+  "name": "Kanchan Baran Hazra",
+  "picture": "https://lh3.googleusercontent.com/a/ACg8ocKyYqpb2yseFN3deGgLDeAUWZ6KFiVJW0LdK1esMzDX9L_TeEJA=s96-c",
+  "given_name": "Kanchan Baran",
+  "family_name": "Hazra",
+  "iat": 1790415158,
+  "exp": 1790418758
+}
+
+github-oauth-response
+{
+  "login": "kanchan-b-hazra",
+  "id": 196073822,
+  "node_id": "U_kgDOC6_ZXg",
+  "avatar_url": "https://avatars.githubusercontent.com/u/196073822?v=4",
+  "gravatar_id": "",
+  "url": "https://api.github.com/users/kanchan-b-hazra",
+  "html_url": "https://github.com/kanchan-b-hazra",
+  "followers_url": "https://api.github.com/users/kanchan-b-hazra/followers",
+  "following_url": "https://api.github.com/users/kanchan-b-hazra/following{/other_user}",
+  "gists_url": "https://api.github.com/users/kanchan-b-hazra/gists{/gist_id}",
+  "starred_url": "https://api.github.com/users/kanchan-b-hazra/starred{/owner}{/repo}",
+  "subscriptions_url": "https://api.github.com/users/kanchan-b-hazra/subscriptions",
+  "organizations_url": "https://api.github.com/users/kanchan-b-hazra/orgs",
+  "repos_url": "https://api.github.com/users/kanchan-b-hazra/repos",
+  "events_url": "https://api.github.com/users/kanchan-b-hazra/events{/privacy}",
+  "received_events_url": "https://api.github.com/users/kanchan-b-hazra/received_events",
+  "type": "User",
+  "user_view_type": "private",
+  "site_admin": false,
+  "name": "Kanchan Baran Hazra",
+  "company": null,
+  "blog": "",
+  "location": "Khairpur,Kolkata,West Bengal",
+  "email": "khazra800@gmail.com",
+  "hireable": null,
+  "bio": "👨‍💻 Engineer | 👨‍🎓 St. Thomas College\r\n🛠️ Building things with C, Python, NumPy & Pandas\r\n🔍 Passionate about problem-solving, algorithms, and clean code",
+  "twitter_username": null,
+  "notification_email": "khazra800@gmail.com",
+  "public_repos": 7,
+  "public_gists": 0,
+  "followers": 0,
+  "following": 0,
+  "created_at": "2025-01-22T15:20:39Z",
+  "updated_at": "2026-01-30T18:47:23Z",
+  "private_gists": 0,
+  "total_private_repos": 1,
+  "owned_private_repos": 1,
+  "disk_usage": 468,
+  "collaborators": 0,
+  "two_factor_authentication": false,
+  "plan": {
+    "name": "free",
+    "space": 976562499,
+    "collaborators": 0,
+    "private_repos": 10000
+  }
+}
