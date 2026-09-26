@@ -5,3 +5,5 @@ register--->email_verify--->login--->home_page
 
 
 ![API-Sample](image/api_sample1.png)
+
+![API-Oauth](image/api_oauth.png)
